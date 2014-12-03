@@ -98,46 +98,71 @@ function validacion_bloque()
 
 	if(generico2.path=="down")
 	{
+		//Marco Inferior
 		if(generico2.y+50+10>500)
 		{
 			generico2.path="";
 		}
 
-		if(generico2.y+50+10>200 &&  generico2.x <150  && generico2.y<250)
+		//BLoque 1
+		if(generico2.y+50+10>200 &&  generico2.x+10 <150  && generico2.y<250)
 		{
 			generico2.path="";			
 		}
 
-
-		if(generico2.y+50+10>350 &&  generico2.x >150  && generico2.y<450)
+		//BLoque 3
+		if(generico2.y+50+10>350 &&  generico2.x+10 >150  && generico2.y<400)
 		{
 			generico2.path="";			
 		}
 	}
 	else if(generico2.path=="up")
 	{
+		//Marco Superior
 		if(generico2.y-10<0)
 		{
 			generico2.path="";
 		}
 
-		if(generico2.y-10<250 &&  generico2.x <150)
+		//BLoque 1
+		if(generico2.y-10<250 &&  generico2.x+10<150 && generico2.y+10>200)
+		{
+			generico2.path="";			
+		}
+
+		//BLoque 1
+		if(generico2.y-10<400 &&  generico2.x+10>150 && generico2.y+10>350)
 		{
 			generico2.path="";			
 		}
 	}
 	else if(generico2.path=="left")
 	{
+		//Marco Izquierdo
 		if(generico2.x<0)
 		{
 			generico2.path="";
 		}
+
+		//BLoque 1
+		if(generico2.y<250 &&  generico2.x+10<150 && generico2.y+50>200)
+		{
+			generico2.path="";			
+		}
+
 	}
 	else if(generico2.path=="right")
 	{
+		//Marco Derecho
 		if(generico2.x+50>500)
 		{
 			generico2.path="";
+		}
+
+		//BLoque 1
+		if(generico2.y<400 &&  generico2.x>150 && generico2.y+50>350)
+		{
+			generico2.path="";			
 		}
 	}	
 }
