@@ -2,18 +2,6 @@
 var tablero;
 var generico;
 var generico2;
-var Blok1;
-var Blok2;
-var Blok3;
-
-
-function bloque (x,y,w,h)
-{
-	this.x=x;
-	this.y=y;
-	this.w=w;
-	this.h=h;
-}
 
 var teclas = {
 	up:38,
@@ -58,15 +46,12 @@ function personaje(url,path)
 function inicio()
 {
 	var canvas = document.getElementById("campo");
+	var ver = document.getElementById("caja");
+
     tablero = canvas.getContext("2d");
 
-    Blok1 = new bloque(0,200,150,50);
-    Blok2 = new bloque(200,0,50,250);
-    Blok3 = new bloque(150,350,350,50);
-
-
     imgFondo = new fondo("fondo.png");    
-    imgDiana= new personaje("diana-frente.png","down");
+    imgDiana= new personaje("diana-frente.png","");
 
     document.addEventListener("keydown",teclado);
 
@@ -80,6 +65,7 @@ function dibujarFondo()
 
 function dibujarPersonaje()
 {
+	validacion_bloque();
 
 	if(generico2.path=="down")
 	{
@@ -100,61 +86,123 @@ function dibujarPersonaje()
 
 	tablero.drawImage(generico2.imagen, generico2.x, generico2.y);    
 
-	if!(validacion_bloque(generico2,Blok1) && validacion_bloque(generico2,Blok1) && validacion_bloque(generico2,Blok1))
-	{
-		alert("PONIG!!!!!!");
-	}
-
     generico2 = null;
     
 }
 
-function validacion_bloque(obj,blok)
+
+var ok="1";
+
+function validacion_bloque()
 {
-	var ok=true;
 
-	
+	if(generico2.path=="down")
+	{
+		if(generico2.y+50+10>500)
+		{
+			generico2.path="";
+		}
 
-	return ok;
+		if(generico2.y+50+10>200 &&  generico2.x <150  && generico2.y<250)
+		{
+			generico2.path="";			
+		}
+
+
+		if(generico2.y+50+10>350 &&  generico2.x >150  && generico2.y<450)
+		{
+			generico2.path="";			
+		}
+	}
+	else if(generico2.path=="up")
+	{
+		if(generico2.y-10<0)
+		{
+			generico2.path="";
+		}
+
+		if(generico2.y-10<250 &&  generico2.x <150)
+		{
+			generico2.path="";			
+		}
+	}
+	else if(generico2.path=="left")
+	{
+		if(generico2.x<0)
+		{
+			generico2.path="";
+		}
+	}
+	else if(generico2.path=="right")
+	{
+		if(generico2.x+50>500)
+		{
+			generico2.path="";
+		}
+	}	
 }
 
 function teclado(evento)
 {
 	var codigo = evento.keyCode;
 
-	imgFondo.url="";   
-	imgFondo.dibujar();
-
-	imgDiana.url="";    	
-	imgDiana.dibujar();
-
-	imgFondo.url="fondo.png";   
-	imgFondo.dibujar();
-
 
 	if(codigo==teclas.down)
 	{
+		imgFondo.url="";   
+		imgFondo.dibujar();
+
+		imgDiana.url="";    	
+		imgDiana.dibujar();
+
+		imgFondo.url="fondo.png";   
+		imgFondo.dibujar();
+
     	imgDiana.url="diana-frente.png";    	
     	imgDiana.path="down";    	
     	imgDiana.dibujar();
 	}
-
-	if(codigo==teclas.up)
+	else if(codigo==teclas.up)
 	{
+		imgFondo.url="";   
+		imgFondo.dibujar();
+
+		imgDiana.url="";    	
+		imgDiana.dibujar();
+
+		imgFondo.url="fondo.png";   
+		imgFondo.dibujar();
+
     	imgDiana.url="diana-atras.png";
     	imgDiana.path="up";
     	imgDiana.dibujar();
 	}
-
-	if(codigo==teclas.left)
+	else if(codigo==teclas.left)
 	{
+		imgFondo.url="";   
+		imgFondo.dibujar();
+
+		imgDiana.url="";    	
+		imgDiana.dibujar();
+
+		imgFondo.url="fondo.png";   
+		imgFondo.dibujar();
+
     	imgDiana.url="diana-izq.png";
     	imgDiana.path="left";
     	imgDiana.dibujar();
 	}
-
-	if(codigo==teclas.right)
+	else if(codigo==teclas.right)
 	{
+		imgFondo.url="";   
+		imgFondo.dibujar();
+
+		imgDiana.url="";    	
+		imgDiana.dibujar();
+
+		imgFondo.url="fondo.png";   
+		imgFondo.dibujar();
+
     	imgDiana.url="diana-der.png";
     	imgDiana.path="right";
     	imgDiana.dibujar();
