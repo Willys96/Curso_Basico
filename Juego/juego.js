@@ -130,11 +130,19 @@ function validacion_bloque()
 			generico2.path="";			
 		}
 
-		//BLoque 1
+		//BLoque 3
 		if(generico2.y-10<400 &&  generico2.x+10>150 && generico2.y+10>350)
 		{
 			generico2.path="";			
 		}
+
+		//BLoque 2
+		if(generico2.y-10<250 &&  generico2.x+50-10>200 && generico2.x+10<250)
+		{
+			generico2.path="";			
+		}
+
+
 	}
 	else if(generico2.path=="left")
 	{
@@ -150,6 +158,12 @@ function validacion_bloque()
 			generico2.path="";			
 		}
 
+		//BLoque 2
+		if(generico2.y<250 &&  generico2.x+10<250 && generico2.x+50-20>200)
+		{
+			generico2.path="";			
+		}
+
 	}
 	else if(generico2.path=="right")
 	{
@@ -159,8 +173,14 @@ function validacion_bloque()
 			generico2.path="";
 		}
 
-		//BLoque 1
-		if(generico2.y<400 &&  generico2.x>150 && generico2.y+50>350)
+		//BLoque 3
+		if(generico2.y<400 &&  generico2.x+50-10>150 && generico2.y+50>350)
+		{
+			generico2.path="";			
+		}
+
+		//BLoque 2
+		if(generico2.y<250 &&  generico2.x+50-10>200 && generico2.x+20<250)
 		{
 			generico2.path="";			
 		}
