@@ -1,4 +1,6 @@
 var hombre;
+var palabra="anglosajon";
+var espacio= new Array(palabra.length);
 
 var Ahorcado = function  (con) 
 {
@@ -85,12 +87,22 @@ Ahorcado.prototype.dibujar = function()
 
 					if(this.numIntentos>4)
 					{
-						//Brazos
+						//Ojos
 						dibujo.beginPath();
-						dibujo.moveTo(170,310);
-						dibujo.lineTo(200,250);
-						dibujo.lineTo(230,310);
-						dibujo.strokeStyle="red";
+
+						//Ojo Izquierdo
+						dibujo.moveTo(170,130);
+						dibujo.lineTo(190,150);
+						dibujo.moveTo(190,130);
+						dibujo.lineTo(170,150);
+
+						//Ojo derecho
+						dibujo.moveTo(210,130);
+						dibujo.lineTo(230,150);
+						dibujo.moveTo(230,130);
+						dibujo.lineTo(210,150);
+
+						dibujo.strokeStyle="blue";
 						dibujo.lineWidth=5;
 						dibujo.stroke();
 						dibujo.closePath;
@@ -123,5 +135,27 @@ function inicio ()
 
 	hombre = new Ahorcado(canvas.getContext("2d"));
 	hombre.dibujar();
-	//hombre.trazar();
+
+	var boton=document.getElementById("boton");
+	var l=document.getElementById("pista");
+
+	boton.addEventListener("click","agregarLetra");
+
+	l.innerText="";
+
+	for(p in palabra)
+	{
+		l.innerText+=" _";
+	}
+}
+
+function agregarLetra () 
+{
+	var l=document.getElementById("letra");
+	var letra=l.value;
+
+	for(p in palabra)
+	{
+
+	}
 }
