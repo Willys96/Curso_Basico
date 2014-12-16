@@ -1,3 +1,60 @@
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('fuentes/OpenSans-Regular-webfont.eot');
+    src: url('fuentes/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fuentes/OpenSans-Regular-webfont.woff') format('woff'),
+         url('fuentes/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('fuentes/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('fuentes/icomoon.eot?-9m5ge7');
+	src:url('fuentes/icomoon.eot?#iefix-9m5ge7') format('embedded-opentype'),
+		url('fuentes/icomoon.woff?-9m5ge7') format('woff'),
+		url('fuentes/icomoon.ttf?-9m5ge7') format('truetype'),
+		url('fuentes/icomoon.svg?-9m5ge7#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pen:before {
+	content: "\e600";
+	margin-right: 0.5em;
+}
+.icon-star:before {
+	content: "\e601";
+	color: yellow;
+	margin-top: 0.1em;
+	margin-right: 0.4em;
+}
+.icon-arrow-up:before {
+	content: "\e602";
+	color: green;
+}
+.icon-arrow-down:before {
+	content: "\e603";
+	color: #DD4F24;
+}
+
+
 a
 {
 	color: #22BCE0; 
@@ -6,7 +63,7 @@ a
 body
 {
 	background: #EEEEEE;
-	font-family: "Arial";
+	font-family: "Ariaopen_sansregularl";
 	font-size: 16px;
 }
 
@@ -29,7 +86,7 @@ footer p:last-child
 }
 
 footer p:last-child:before
-{
+{ 
 	content: "- ";
 }
 
@@ -73,19 +130,34 @@ header #avatar img
 	width: 55px;
 }
 
-header #logo img
+header #logo
 {
+	/*-webkit-transform:rotate(90deg);	
+	-webkit-transform:rotate(90deg);	
+	-webkit-transform:rotate(90deg);	
+	-webkit-transform:rotate(90deg);	
+	webkit es prefijo propietario de chrome*/
 	border-right: 1px solid white;
 	margin-right: 0.5em;
+}
+
+header #logo img:hover
+{
+	transition:0.3s;
+	-webkit-transform:rotate(360deg);	
+}
+
+header #logo img
+{
 	padding: 0.5em;
 	width: 52px;
 }
 
 nav
 {
-	background: #80BCA3;
+	background: #7488CD; /*#80BCA3*/
 	margin: 0;
-	padding: 0 0.5em;
+	padding: 0 6em 0 0;
 	position: relative;
 }
 
@@ -126,6 +198,11 @@ nav ul li a
 	color: white;
 	display: block;
 	padding: 0.5em 0;
+}
+
+aside
+{
+	display: none;
 }
 
 #contenido
@@ -197,20 +274,73 @@ nav ul li a
 {
 	color: #444;
 	text-decoration: none;
+	padding-right: 0;
 }
 
 #contenido .item .votacion
 {
 	background: white;
 	border-radius: 0 0 0.5em 0.5em;
-	left: 2%;
+	left: 1%;
 	margin-top: 3px;
 	position: absolute;
 	top:100%;
-	width: 96%;
+	width: 98%;
+	/*padding: 0 1em;*/
+}
+
+#contenido .item .votacion .comentario_item
+{
+	color: white;
+	background: #555;
+	padding: 0 0.5em;
+	border-radius: 5px;
+	margin-right: 0.5em;
+}
+
+#contenido .item .votacion a
+{
+	text-decoration: none;
 }
 
 #contenido .item .votacion .comentario_item, #contenido .item .votacion .guardar_item
 {
 	float: right;
+}
+
+@media screen and (min-width: 700px){
+	#contenido
+	{
+		overflow: hidden;
+	}
+
+	#contenido .item	
+	{
+		width: 49%;
+		float: left;
+	}
+
+	#contenido .item:nth-child(odd)/*impares*/
+	{
+		width: 49%;
+		margin-right: 2%;
+		float: left;
+	}
+
+}
+
+@media screen and (min-width: 1000px){
+
+	aside
+	{
+		display: block;
+		float: right;
+		width: 20%;
+	}
+
+	aside video
+	{
+		width: 100%;
+	}
+
 }
