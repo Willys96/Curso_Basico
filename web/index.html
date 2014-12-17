@@ -7,6 +7,8 @@
 	<title>Titulo pricipal de la pagina de ejemplo</title>
 	<link rel="stylesheet" href="normalize.css" />
 	<link rel="stylesheet" href="estilo.css" />
+	
+	
 </head>
 <body>
 
@@ -29,12 +31,20 @@
 			<li><a href="#" >JavaScript</a></li>
 			<li><a href="#" >CSS3</a></li>
 			<li><a href="#" >Django</a></li>
-			<li id="publicar_nav"><a href="#" class="icon-pen" >Publicar</a></li>
+			<li id="publicar_nav"><a href="#" class="icon-pen" id="mostrar-form" >Publicar</a></li>
 		</ul>
 	</nav>
 
-	<!--aside: contenido no muy relevante
-	-->
+	<!--Formulario-->
+	<form action="" id="formulario" class="formulario">
+		<!--<label for="titulo">Titulo</label>	-->
+		<input type="text" id="titulo" placeholder="Titulo" required />
+		<!--<label for="url">URL:</label>	-->
+		<input type="url" id="url"  placeholder="Link" required />
+		<input type="submit" id="enviar" value="Agregar" required />
+	</form>
+
+	<!--aside: contenido no muy relevante-->
 	<aside>
 		<!--Video-->
 		<video width="320" height="240" controls autoplay>
@@ -47,12 +57,13 @@
 
 	<!--Contenido-->
 	<section id="contenido">
+
 		<article class="item">
 			<figure class="imagen_item">
 				<img src="imagen.jpg">
 			</figure>
 			<h2 class="titulo_item">
-				<a href="#" >Titulo respectivo del articulo</a>
+				<a href="#" >Titulo respectivo del articulo 1</a>
 			</h2>
 			<div class="autor_item">
 				Por <a href="#" >Autor</a>
@@ -78,7 +89,7 @@
 				<img src="imagen.jpg">
 			</figure>
 			<h2 class="titulo_item">
-				<a href="#" >Titulo respectivo del articulo</a>
+				<a href="#" >Titulo respectivo del articulo 2</a>
 			</h2>
 			<div class="autor_item">
 				Por <a href="#" >Autor</a>
@@ -104,7 +115,7 @@
 				<img src="imagen.jpg">
 			</figure>
 			<h2 class="titulo_item">
-				<a href="#" >Titulo respectivo del articulo</a>
+				<a href="#" >Titulo respectivo del articulo 3</a>
 			</h2>
 			<div class="autor_item">
 				Por <a href="#" >Autor</a>
@@ -130,7 +141,7 @@
 				<img src="imagen.jpg">
 			</figure>
 			<h2 class="titulo_item">
-				<a href="#" >Titulo respectivo del articulo</a>
+				<a href="#" >Titulo respectivo del articulo 4</a>
 			</h2>
 			<div class="autor_item">
 				Por <a href="#" >Autor</a>
@@ -155,7 +166,7 @@
 				<img src="imagen.jpg">
 			</figure>
 			<h2 class="titulo_item">
-				<a href="#" >Titulo respectivo del articulo</a>
+				<a href="#" >Titulo respectivo del articulo 5</a>
 			</h2>
 			<div class="autor_item">
 				Por <a href="#" >Autor</a>
@@ -181,7 +192,7 @@
 				<img src="imagen.jpg">
 			</figure>
 			<h2 class="titulo_item">
-				<a href="#" >Titulo respectivo del articulo</a>
+				<a href="#" >Titulo respectivo del articulo 6</a>
 			</h2>
 			<div class="autor_item">
 				Por <a href="#" >Autor</a>
@@ -191,7 +202,7 @@
 				<span class="fecha_item">
 					Hace <strong>5</strong> min
 				</span>
-			</div>
+			</div>   
 
 			<div class="votacion">
 				<a href="#" class="Up icon-arrow-up"></a>
@@ -209,6 +220,12 @@
 		<p><strong>Powered by Pony</strong></p>
 		<p>mejorando.la 2014</p>
 	</footer>
+
+	<!-- Buena Practica -->
+	<!--<script src="prefixfree.js"></script>-->
+	<script src="jquery-1.11.1.min.js"></script>
+	<!--<script src="jquery-2.1.1.min.js"></script>-->
+	<script type="text/javascript" src="web.js"></script>
 
 </body>
 </html>
