@@ -1,3 +1,5 @@
+/*@import url(normañize.css);*/
+
 @font-face {
     font-family: 'open_sansregular';
     src: url('fuentes/OpenSans-Regular-webfont.eot');
@@ -9,6 +11,7 @@
     font-style: normal;
 
 }
+
 
 @font-face {
 	font-family: 'icomoon';
@@ -80,6 +83,7 @@ body .formulario input
 {
 	border: 1px solid #ccc;
 	border-radius: 3px;
+	font-style: italic;
 }
 
 body .formulario input[type="submit"]
@@ -88,7 +92,6 @@ body .formulario input[type="submit"]
 	border-color: #22BCE0;
 	box-shadow:rgba(0,0,0,0.5) 5px 5px 20px;
 	color: white;
-	font-style: italic;
 	text-shadow:rgba(0,0,0,0.5) 2px 2px 5px;
 }
 
@@ -169,8 +172,8 @@ header #logo
 
 header #logo img:hover/*Evento de posicionamiento sobre un control con css*/
 {
-	-webkit-transition: 0.3s;
-	-webkit-transform: rotate(-720deg);/*transformacion para chrome*/	
+	-webkit-transition: 0.8s;
+	-webkit-transform: rotate(-360deg);/*transformacion para chrome*/
 	/*-ms-transform:rotate(720deg);*//*transformacion para IE*/		
 }
 
@@ -202,6 +205,13 @@ nav ul #publicar_nav
 	right: 0;
 	top: -0.3em;
 
+}
+
+nav ul #publicar_nav .disabled
+{
+	background: gray;
+	box-shadow: none;
+	cursor: default;
 }
 
 nav ul #publicar_nav a

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utp-8">
+	<meta charset="utf-8">
 	<meta name="description" content="Descripción de la pagina principal" />
+	<!-- <meta http-equiv="content-script-type" content="text/javascript"> -->
 	<meta name="viewport" conten="width=device-width, minimum-scale=1, maximum-scale=1" />
 	<title>Titulo pricipal de la pagina de ejemplo</title>
 	<link rel="stylesheet" href="normalize.css" />
 	<link rel="stylesheet" href="estilo.css" />
-	
+	<!-- <script src="prefixfree.js" type="text/javascript"></script> -->
 	
 </head>
 <body>
@@ -223,9 +224,25 @@
 
 	<!-- Buena Practica -->
 	<!--<script src="prefixfree.js"></script>-->
-	<script src="jquery-1.11.1.min.js"></script>
+	<script src="jquery-1.11.1.min.js" type="text/javascript"></script>
 	<!--<script src="jquery-2.1.1.min.js"></script>-->
-	<script type="text/javascript" src="web.js"></script>
+	<script src="web.js" type="text/javascript"></script>
+	
+	<script type="text/javascript">
+		/*window.onload=function () {
+			console.log("Ya se disparó el evento onload");
+		}*/
+
+		/*$(document).on("ready",function () {
+			console.log("Ya se disparó el evento DOMContentLoaded");
+		});*/
+
+
+		$(function () {//Por defecto se asocia al evento ready
+
+		});
+
+	</script>
 
 </body>
 </html>
