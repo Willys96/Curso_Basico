@@ -25,6 +25,7 @@ function mostrarFormulario(){
 
 function agregarPost () {
 	var url = $url.val(),
+<<<<<<< HEAD
 		titulo = $titulo.val(),
 		$clone = $post.clone();
 
@@ -43,6 +44,21 @@ function agregarPost () {
 
 	$titulo.val("");
 	$url.val("");
+=======
+		titulo = $titulo.val(),//val() captura ek valor -value-
+		$clone = $post.clone();
+
+	$clone.find(".titulo_item a") //Busca y adopta las propiedades del control que se busca
+		.text(titulo)
+		.attr("href",url);
+
+	$clone.hide();
+
+	$list.prepend($clone);//Agrega un control como primer elemento de list
+
+	$clone.fadeIn();//lleva a cabo la animación 
+
+>>>>>>> origin/master
 
 	return false;//Evita el refresco de la ventana
 }
