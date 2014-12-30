@@ -1,0 +1,58 @@
+/*
+header 				.....Selector de etiqueta
+{}
+header nav 			.....Selector de etiqueta descendente
+{}
+#yo 				.....Selector de ID
+{}
+.Header 			....Selector de Clase
+{}
+ul > li 			.....Selector de Hijo inmediato
+{}
+section + section 	.....Selector de elemento adyasente
+{}
+[href="#yo"] 		.....Selector de atributo
+{}
+
+CLASES:
+-------
+
+.MyComponent 				....Componente
+.MyComponent.is-animating	....Estado (seguda clase)
+.MyComponent--modifider		....Modificador (extended, notación camell)
+.MyComponent-part			....Partes
+.MyComponent u-utilidad		....Utilidades
+
+*/
+.u-title{
+	
+}
+
+.Header{
+	
+}
+
+.Header-imageCountainer{
+
+}
+
+.MainMenu{
+}
+
+.Profile{
+
+}
+
+.Profile-span{
+	background: red;
+	color: white;
+}
+
+.Work{
+
+}
+
+.Footer{
+
+}
+
